@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>\
+ <style>
+
+button:hover {
+  background-color: blue;
+  transition: all 1s ease-in;
+}
+
+.ColorBox {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin-top: 100px;
+}
+
+.is-active {
+  background-color: blue;
+}
+ </style>
+  
+</head>
+<body>
+  <button class="click-here" type="button" onclick="myFunction()" style="color: red; height: 50px; cursor: pointer;">Click here to change color of box</button>
+  <div class="ColorBox"></div>
+</body>
+
+<script>
+  //all of these work
+  const colorButton = document.querySelector(".click-here");
+  const colorBox = document.querySelector(".ColorBox");
+
+/*   colorButton.addEventListener("click", changeColor);
+  function changeColor () {
+    colorBox.classList.add("is-active");  /* this didn't work when you used #ColorBox. im assuming because css gives precedence to an id. 
+  }
+ */
+
+/*  colorButton.onclick = function () {
+  /* colorBox.classList.add("is-active"); this is a different line. both of these work
+  colorBox.style.backgroundColor = "blue";
+ } */
+
+ function myFunction () {
+  colorBox.style.backgroundColor = "blue"
+ }
+
+</script>
+</html>
