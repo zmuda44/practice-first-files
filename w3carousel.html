@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="w3carousel.css">
+  <title>Document</title>
+</head>
+<body>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1/3</div>
+    <img src="https://placehold.jp/3d4070/ffffff/700x250.png" style="width: 100%">
+    <div class="text">Caption text</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">2/3</div>
+    <img src="https://placehold.jp/a5a1a3/ffffff/700x250.png" style="width: 100%">
+    <div class="text">Caption text</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3/3</div>
+    <img src="https://placehold.jp/75003b/ffffff/700x250.png" style="width: 100%">
+    <div class="text">Caption text</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<script>
+  /* 2 separate lines here. starting the slidesIndex at 1 to be late changed
+  by a button click either +1 or -1* it will start out as one showSlides
+  will hold whatever parameter that slideIndex currently is*/
+
+  let slideIndex=0;
+  showSlides(slideIndex);
+
+  /* plusSlides is on the button. the number of the button goes into the
+  equation as a parameter to modify the value of whatever slideIndex is at
+  the time and show slides will hold that parameter* keep in mind that you
+  are modifying the parameter of a function that hasn't been defined yet.
+  the slideIndex still remains a parameter within the showSlides function. */
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+    //you need showSlides here
+  }
+
+  /* showSlides is still holding the value of whatever slideIndex is but now
+  you are going to use that parameter to do a few other things.
+  1st thing you do within this function is define the dom? element that
+  slides will be. then you put the guardrails on. then you select all slides
+  in the array. they also display all slides within that array as display none
+  but i'm not sure if they need to do this or not*  make sure you are using
+  querySelectorAll this is also a little different. normally you would define
+  a fucnction and then call it with a parameter. this time you are basically 
+  defining the parameter and then defining the function. it's almost like you
+  are calling the function showSlides with the dyanmic parameter first.
+  
+  then you call the function showSlides with whatever the parameter slideindex
+  is. the slideIndex is always the important number though. with the 
+  slides.[slideIndex-1] you are basically saying whatever number that is
+  within the array display that object. 
+  
+  everything is all about this function showSlides. that's where everything is
+  defined and it holds he value for the important parameter which has 
+  an object in an array bound to it.  even when the machine that changes
+  the variable slideIndex is pushed it is still defined as a parameter of
+  the greater function  just by putting the slidesIndex number in the 
+  array slot it automatically knows. which does make sense, since it's 
+  essentially just a number. i dont know why if you type slides into the 
+  console it comes back as undefined. when i did a console.log(slides) it 
+  showed the NodeList*/
+
+  function showSlides(n) {
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    if (n > slides.length-1) {
+      slideIndex = 0
+    }
+    if (n < 0) {
+      slideIndex = slides.length
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex].style.display = "block";
+    console.log(slides);
+  }
+  
+</script>
+
+</body>
+</html>
