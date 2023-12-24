@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #changeColor {
+    width: 500px;
+    height: 500px;
+    background: red;
+    margin-top: 100px;
+  }
+
+  .active {
+    position: absolute;
+    top: 50px;
+    bottom: 54px;
+  }
+</style>
+<body>
+
+ <!--  <button id="btn" onclick="alert('this here')">click here</button> -->
+
+ <button id="btn">click here</button>
+
+  <div id="changeColor"></div>
+  
+</body>
+
+<script>
+  /* i notice when you do this, it gives the alert befor ethe click when you use it as inline javascript it is ok*/
+  
+ /*  document.querySelector("#btn").onclick = alert('this'); */
+
+ /* this works and it's more like writing it in a function */
+/*  document.querySelector("#btn").addEventListener("click", function (){
+  alert("clicked")
+ }) */
+
+ /* this works the same way as .onclick = alert */
+ /* document.querySelector("#btn").addEventListener("click", alert("clicked")) */
+
+ document.querySelector("#btn").addEventListener("click", function () {
+  var changedBox = document.querySelector("#changeColor");
+  changedBox.classList.toggle("active")
+ })
+</script>
+</html>
