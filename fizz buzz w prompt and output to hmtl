@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="fizzoutput">your answer will go here</p>
+
+  <script>
+    var fizzInput = prompt("enter a number between 1 and 100");
+    
+    function output (fizzInput) {
+      if (isNaN(fizzInput)) {
+        return "not a number";
+      }
+      else if (fizzInput > 100 || fizzInput < 1) {
+        return "out of number range";
+      }
+      else if (fizzInput % 3 == 0 && fizzInput % 5 == 0) {
+        return "fizzbuzz";
+      }
+      else if (fizzInput % 3 == 0) {
+        return "fizz";
+      }
+      else if (fizzInput % 5 == 0) {
+        return "buzz";
+      }
+      else return fizzInput;
+    }
+    
+  var fizzOutput = document.querySelector("#fizzoutput")
+
+    fizzOutput.innerHTML = output(fizzInput)
+  
+ /* function fizzy (fizzInput) {
+      if (fizzInput % 3 == 0 && fizzInput % 5 == 0) {
+        return "fizzbuzz";
+      }
+      else if (fizzInput % 3 == 0) {
+        return "fizz";
+      }
+      else if (fizzInput % 5 == 0) {
+        return "buzz";
+      }
+      else return fizzInput;
+    }
+
+ */
+
+
+  </script>
+</body>
+
+
+</html>
