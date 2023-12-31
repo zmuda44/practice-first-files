@@ -1,0 +1,22 @@
+function goToStore(money, pricePerBottle) {
+    
+    
+    console.log("go to store");
+    console.log("pick up money");
+    console.log("give cashier " + money + " dollars");
+    
+    function numberOfBottles() {
+       return Math.floor(money / pricePerBottle)
+    };
+    console.log("get back " + numberOfBottles() + " bottles");
+    
+    function amountChange () {
+        return numberOfBottles() * pricePerBottle - money;
+    };
+    console.log("and get back " + amountChange() + " cents change");
+
+
+}
+ 
+
+goToStore(20, 10);
