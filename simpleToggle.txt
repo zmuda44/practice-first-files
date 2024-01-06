@@ -1,0 +1,61 @@
+<section class="featured-imgs">
+      <div class="container">
+        <div class="img-container showing">
+          <img src="media/300x300 steak_300x300 turkey.webp" alt="image1" />
+          <img src="media/turkey_300x300.webp" alt="image2" />
+          <img src="media/breakfast salad_300x300.webp" alt="image3" />
+        </div>
+        <div class="img-container">
+          <img src="media/300x300 steak_300x300 turkey.webp" alt="image4" />
+          <img src="media/300x300 steak_300x300 turkey.webp" alt="image5" />
+          <img src="media/300x300 steak_300x300 turkey.webp" alt="image6" />
+        </div>
+        <button class="toggle-imgContainer">click here to change</button>
+      </div>
+    </section>
+
+    .featured-imgs .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* position: relative; */
+  /* not working with absolute positioning
+  on img-container 
+  justify-content: center;
+  */
+}
+
+.img-container {
+  /* position: absolute; */
+  display: none;
+  width: 75%;
+  margin: auto;
+}
+
+/* another possible way would to 
+set  */
+.showing {
+  display: block;
+}
+
+.featured-imgs img {
+  /* i wanted the image to be
+  about a third of the parent container */
+  width: 33%;
+}
+
+.featured-imgs button {
+  width: 200px;
+  margin: 5%;
+}
+
+console.log("something");
+
+const imgContainer = document.querySelectorAll(".img-container");
+const featuredButton = document.querySelector(".featured-imgs button");
+
+featuredButton.addEventListener("click", function () {
+  imgContainer[0].classList.toggle("showing");
+  imgContainer[1].classList.toggle("showing");
+  console.log("clicked");
+});
